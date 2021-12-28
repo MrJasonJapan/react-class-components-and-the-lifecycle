@@ -1,12 +1,27 @@
+/* eslint-disable no-useless-constructor */
 import React from "react";
 import ReactDOM from "react-dom";
 
-const App = () => {
-  window.navigator.geolocation.getCurrentPosition(
-    (position) => console.log(position),
-    (err) => console.log(err)
-  );
-  return <div>Hi there!</div>;
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
+    // Initialize our state
+    // THIS IS THE ONLY TIME we ever do direct assignment to this.state
+    this.state = { lat: null };
+
+    window.navigator.geolocation.getCurrentPosition(
+      (position) => {
+        // Update our state object
+        this.setState({ lat: position.coords.latitude });
+      },
+      (err) => console.log(err)
+    );
+  }
+
+  // React requires that we define render()
+  render() {
+    return <div>Latitude: {this.state.lat}</div>;
+  }
+}
 ReactDOM.render(<App />, document.querySelector("#root"));
