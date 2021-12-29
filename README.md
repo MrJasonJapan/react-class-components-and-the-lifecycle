@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Use this app to see a Class-Based React Component (App) in Action
+### Private Notion Memo
+https://www.notion.so/spagettys/Class-Based-Components-Lifecycle-Methods-283ebca6a2a24375a3f88802e19a2459
+
 ## Available Scripts
 
 In the project directory, you can run:
